@@ -50,29 +50,13 @@
 
     <!-- Shopping Cart -->
     <div class="shopping-cart">
-      <div class="cart-item">
-        <img src="img/products/headphone.jpg" alt="Item 1">
-        <div class="item-detail">
-          <h3>Headphone</h3>
-          <div class="item-price">30K</div>
-        </div>
-        <i data-feather="trash-2" class="remove-item"></i>
+      <h2>Keranjang Belanja</h2>
+      <div class="cart-items">
+        <!-- Isi dari keranjang belanja akan ditampilkan di sini -->
       </div>
-      <div class="cart-item">
-        <img src="img//products/earphone.jpg" alt="Item 2">
-        <div class="item-detail">
-          <h3>Earphone</h3>
-          <div class="item-price">IDR 30K</div>
-        </div>
-        <i data-feather="trash-2" class="remove-item"></i>
-      </div>
-      <div class="cart-item">
-        <img src="img/products/casing.jpeg" alt="Item 3">
-        <div class="item-detail">
-          <h3>Casing hp</h3>
-          <div class="item-price">IDR 30K</div>
-        </div>
-        <i data-feather="trash-2" class="remove-item"></i>
+      <div class="cart-summary">
+        <p class="total-price">Total: IDR 0</p>
+        <button class="clear-cart-button">Clear Cart</button>
       </div>
     </div>
   </nav>
@@ -111,173 +95,17 @@
     </div>
   </section>
 
+  <script>
+   
+  </script>
   <!-- Products Section start -->
   <section class="products" id="products">
     <h2>i<span>T</span>ems</h2>
+    <div class="row" id="product-container">
 
-    <div class="row">
-      <div class="product-card">
-        <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
-          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
-        </div>
-        <div class="product-image">
-          <img src="img/products/headphone.jpg" alt="Barang 1">
-        </div>
-        <div class="product-content">
-          <h3>Headphone Bluetooth</h3>
-          <div class="product-stars">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star"></i>
-          </div>
-          <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
-          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
-        </div>
-        <div class="product-image">
-          <img src="img/products/earphone.jpg" alt="Barang 2">
-        </div>
-        <div class="product-content">
-          <h3>earphone Bluetooth</h3>
-          <div class="product-stars">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star"></i>
-          </div>
-          <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
-          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
-        </div>
-        <div class="product-image">
-          <img src="img/products/casing.jpeg" alt="Barang 3">
-        </div>
-        <div class="product-content">
-          <h3>Casing Hp Lucu</h3>
-          <div class="product-stars">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star"></i>
-          </div>
-          <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
-          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
-        </div>
-        <div class="product-image">
-          <img src="img/products/charger.jpg" alt="Barang 3">
-        </div>
-        <div class="product-content">
-          <h3>Charger</h3>
-          <div class="product-stars">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star"></i>
-          </div>
-          <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
-          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
-        </div>
-        <div class="product-image">
-          <img src="img/products/powerbank.jpg" alt="Barang 3">
-        </div>
-        <div class="product-content">
-          <h3>Powerbank</h3>
-          <div class="product-stars">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star"></i>
-          </div>
-          <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
-          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
-        </div>
-        <div class="product-image">
-          <img src="img/products/speaker-lamp.jpg" alt="Barang 3">
-        </div>
-        <div class="product-content">
-          <h3>Speaker Lamp</h3>
-          <div class="product-stars">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star"></i>
-          </div>
-          <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
-          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
-        </div>
-        <div class="product-image">
-          <img src="img/products/usb.jpg" alt="Barang 3">
-        </div>
-        <div class="product-content">
-          <h3>Kabel USB</h3>
-          <div class="product-stars">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star"></i>
-          </div>
-          <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
-          <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
-        </div>
-        <div class="product-image">
-          <img src="img/products/mouse.jpeg" alt="Barang 3">
-        </div>
-        <div class="product-content">
-          <h3>Mouse</h3>
-          <div class="product-stars">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star"></i>
-          </div>
-          <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
+
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
@@ -359,4 +187,53 @@
   <script src="js/apl.js"></script>
 </body>
 
-</html>
+</html><!-- FILEPATH: /c:/1 kill/laravel/help other/tugas/index.html -->
+
+<!-- Products Section start -->
+<section class="products" id="products">
+  <h2>i<span>T</span>ems</h2>
+
+  <div class="row" id="product-list">
+    <!-- Product cards will be dynamically added here -->
+  </div>
+</section>
+
+<!-- My Javascript -->
+<script src="js/api.js"></script>
+<script>
+  // Call the API to get the list of products
+  fetch('https://fakestoreapi.com/products')
+    .then(response => response.json())
+    .then(products => {
+      // Loop through the products and create a card for each one
+      const productList = document.getElementById('product-list');
+      products.forEach(product => {
+        const card = `
+          <div class="product-card">
+            <div class="product-icons">
+              <a href="#"><i data-feather="shopping-cart"></i></a>
+              <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+            </div>
+            <div class="product-image">
+              <img src="${product.image}" alt="${product.title}">
+            </div>
+            <div class="product-content">
+              <h3>${product.title}</h3>
+              <div class="product-stars">
+                <i data-feather="star" class="star-full"></i>
+                <i data-feather="star" class="star-full"></i>
+                <i data-feather="star" class="star-full"></i>
+                <i data-feather="star" class="star-full"></i>
+                <i data-feather="star"></i>
+              </div>
+              <div class="product-price">$${product.price}</div>
+            </div>
+          </div>
+        `;
+        productList.insertAdjacentHTML('beforeend', card);
+      });
+      // Replace the feather icons
+      feather.replace();
+    })
+    .catch(error => console.error(error));
+</script>
