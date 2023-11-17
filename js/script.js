@@ -1,3 +1,62 @@
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Data produk
+  const products = [
+      { id: 1, name: 'Headphone', img: './../img/products/headphone.jpg', price: 20000 },
+      { id: 2, name: 'Earphone', img: './../img/products/earphone.jpg', price: 20000 },
+      { id: 3, name: 'Casing', img: './../img/products/casing.jpeg', price: 20000 },
+      { id: 4, name: 'Usb', img: './../img/products/usb.jpg', price: 20000 },
+      { id: 5, name: 'Speaker Lamp', img: './../img/products/speaker-lamp.jpg', price: 20000 },
+  ];
+
+  // Fungsi untuk membuat elemen produk
+  // function createProductElement(product) {
+  //   const productCard = document.createElement('div');
+  //   productCard.classList.add('product-card');
+  
+  //   productCard.innerHTML = `
+  //     <div class="product-icons">
+  //       <a href="#" class="add-to-cart-button" data-product-id="${product.id}"><i data-feather="shopping-cart"></i></a>
+  //       <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+  //     </div>
+  //     <div class="product-image">
+  //       <img src="${product.img}" alt="${product.name}">
+  //     </div>
+  //     <div class="product-content">
+  //       <h3>${product.name}</h3>
+  //       <div class="product-price">IDR ${product.price}</div>
+  //     </div>
+  //   `;
+  
+  //   const addToCartButton = productCard.querySelector('.add-to-cart-button');
+  //   addToCartButton.addEventListener('click', (event) => {
+  //     event.preventDefault();
+  //     const productId = parseInt(event.target.getAttribute('data-product-id'));
+  //     const selectedProduct = products.find((prod) => prod.id === productId);
+  //     if (selectedProduct) {
+  //       addToCart(selectedProduct);
+  //     } else {
+  //       console.error('Product not found');
+  //     }
+  //   });
+  
+  //     return productCard;
+  // }
+
+  // Fungsi untuk menambahkan produk ke dalam DOM
+  function renderProducts() {
+      const productContainer = document.getElementById('product-container');
+
+      products.forEach(product => {
+          const productElement = createProductElement(product);
+          productContainer.appendChild(productElement);
+      });
+  }
+
+  renderProducts(); // Memanggil fungsi untuk menampilkan produk
+});
+let shoppingCartItems = [];
+
 // Toggle class active untuk hamburger menu
 const navbarNav = document.querySelector('.navbar-nav');
 
@@ -67,37 +126,55 @@ window.onclick = (e) => {
 };
 
 // Menyimpan produk di dalam keranjang belanja
-let shoppingCartItems = [];
+// ... (kode sebelumnya)
 
-// Fungsi konversi ke format mata uang Rupiah
-const rupiah = (number) => {
-  return new Intl.NumberFormat('id-ID', {
-    style: 'currency',
-    currency: 'IDR',
-    minimumFractionDigits: 0
-  }).format(number);
+// Fungsi untuk menampilkan total harga belanja
+const renderTotalPrice = () => {
+  const totalPriceElement = document.querySelector('.total-price');
+  const totalPrice = shoppingCartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+  totalPriceElement.textContent = `Total: ${rupiah(totalPrice)}`;
 };
 
-// Fungsi untuk menambah produk ke dalam keranjang belanja
-const addToCart = (product) => {
-  const existingProductIndex = shoppingCartItems.findIndex((item) => item.id === product.id);
+// Function to add to cart
+const addToCart = (productId) => {
+  const selectedProduct = products.find(product => product.id === productId);
 
-  if (existingProductIndex !== -1) {
-    shoppingCartItems[existingProductIndex].quantity++;
+  if (selectedProduct) {
+    const existingProduct = shoppingCartItems.find(item => item.id === productId);
+    if (existingProduct) {
+      existingProduct.quantity++;
+    } else {
+      shoppingCartItems.push({ ...selectedProduct, quantity: 1 });
+    }
+
+    renderShoppingCart();
   } else {
-    shoppingCartItems.push({ ...product, quantity: 1 });
+    console.error('Product not found');
   }
-
-  renderShoppingCart();
 };
 
-// Fungsi untuk menghapus produk dari keranjang belanja
+// Function to remove from cart
 const removeFromCart = (productId) => {
-  shoppingCartItems = shoppingCartItems.filter((item) => item.id !== productId);
+  const index = shoppingCartItems.findIndex(item => item.id === productId);
+
+  if (index !== -1) {
+    if (shoppingCartItems[index].quantity > 1) {
+      shoppingCartItems[index].quantity--;
+    } else {
+      shoppingCartItems.splice(index, 1);
+    }
+
+    renderShoppingCart();
+  }
+};
+
+// Function to clear cart
+const clearCart = () => {
+  shoppingCartItems = [];
   renderShoppingCart();
 };
 
-// Fungsi untuk memperbarui tampilan keranjang belanja
+// Function to render shopping cart
 const renderShoppingCart = () => {
   const cartContainer = document.querySelector('.cart-items');
   cartContainer.innerHTML = '';
@@ -112,41 +189,39 @@ const renderShoppingCart = () => {
         <img src="${item.img}" alt="${item.name}" />
         <div>
           <h4>${item.name}</h4>
-          <p>${rupiah(item.price)} x ${item.quantity}</p>
-          <button class="remove-item" data-id="${item.id}">Remove</button>
+          <p>Price: IDR ${item.price} | Quantity: ${item.quantity}</p>
+          <button class="remove-item" data-product-id="${item.id}">Remove</button>
         </div>
       `;
       cartContainer.appendChild(cartItem);
-
-      const removeButtons = cartItem.querySelectorAll('.remove-item');
-      removeButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const productId = parseInt(button.getAttribute('data-id'));
-          removeFromCart(productId);
-        });
-      });
     });
   }
 
   renderTotalPrice();
 };
 
-// Fungsi untuk menampilkan total harga belanja
-const renderTotalPrice = () => {
-  const totalPriceElement = document.querySelector('.total-price');
-  const totalPrice = shoppingCartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  totalPriceElement.textContent = `Total: ${rupiah(totalPrice)}`;
-};
+// Function to render total price
+// const renderTotalPrice = () => {
+//   const totalPriceElement = document.querySelector('.total-price');
+//   const totalPrice = shoppingCartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+//   totalPriceElement.textContent = `Total: IDR ${totalPrice}`;
+// };
 
-// Initialize Alpine.js data
-document.addEventListener('alpine:init', () => {
-  Alpine.data('products', () => ({
-    items: [
-      { id: 1, name: 'Headphone', img: '1.jpg', price: 20000 },
-      { id: 2, name: 'Earphone', img: '2.jpg', price: 20000 },
-      { id: 3, name: 'Casing', img: '3.jpeg', price: 20000 },
-      { id: 4, name: 'Usb', img: '4.jpg', price: 20000 },
-      { id: 5, name: 'Speaker Lamp', img: '5.jpg', price: 20000 },
-    ],
-  }));
+// Event listener for removing from cart
+document.querySelectorAll('.remove-item').forEach(removeButton => {
+  const productId = parseInt(removeButton.dataset.productId);
+
+  removeButton.addEventListener('click', () => {
+    removeFromCart(productId);
+  });
+});
+
+// Event listener for clearing cart
+document.querySelector('.clear-cart-button').addEventListener('click', () => {
+  clearCart();
+});
+
+// Render the initial shopping cart on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+  renderShoppingCart();
 });
