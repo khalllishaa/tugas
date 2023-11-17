@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // Data produk
   const products = [
       { id: 1, name: 'Headphone', img: './../img/products/headphone.jpg', price: 150000 },
-      { id: 2, name: 'Earphone', img: './../img/products/earphone.jpg', price: 20000 },
-      { id: 3, name: 'Casing', img: './../img/products/casing.jpeg', price: 20000 },
-      { id: 4, name: 'Usb', img: './../img/products/usb.jpg', price: 20000 },
-      { id: 5, name: 'Speaker Lamp', img: './../img/products/speaker-lamp.jpg', price: 20000 },
-      { id: 5, name: 'Speaker Lamp', img: './../img/products/speaker-lamp.jpg', price: 20000 },
-      { id: 5, name: 'Speaker Lamp', img: './../img/products/speaker-lamp.jpg', price: 20000 },
+      { id: 2, name: 'Earphone', img: './../img/products/earphone.jpg', price: 80000 },
+      { id: 3, name: 'Casing', img: './../img/products/casing.jpeg', price: 30000 },
+      { id: 4, name: 'Usb', img: './../img/products/usb.jpg', price: 50000 },
+      { id: 5, name: 'Speaker Lamp', img: './../img/products/speakerlamp.jpg', price: 100000 },
+      { id: 6, name: 'Speaker Lamp', img: './../img/products/powerbank.jpg', price: 180000 },
+      { id: 7, name: 'Speaker Lamp', img: './../img/products/charger.jpg', price: 250000 },
   ];
 
   // Fungsi untuk membuat elemen produk
@@ -45,3 +45,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
   renderProducts(); // Memanggil fungsi untuk menampilkan produk
 });
+
+
