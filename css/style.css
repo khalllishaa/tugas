@@ -181,7 +181,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url('../img/bg/tpb.jpg');
+  background-image: url('../img/bg/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -204,7 +204,7 @@ body {
   position: absolute;
   /* background: salmon; */
   inset: 0;
-  -webkit-mask-image: url('../img/bg/bg.jpg');
+  -webkit-mask-image: url('../img/bg/tpb.jpg');
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
   -webkit-mask-position: center;
@@ -372,6 +372,10 @@ body {
   text-decoration: line-through;
   font-weight: lighter;
   font-size: 1rem;
+}
+
+.productsz{
+  display: none;
 }
 
 /* Contact Section */

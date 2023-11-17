@@ -125,9 +125,6 @@ window.onclick = (e) => {
   }
 };
 
-// Menyimpan produk di dalam keranjang belanja
-// ... (kode sebelumnya)
-
 // Fungsi untuk menampilkan total harga belanja
 const renderTotalPrice = () => {
   const totalPriceElement = document.querySelector('.total-price');
@@ -199,13 +196,6 @@ const renderShoppingCart = () => {
 
   renderTotalPrice();
 };
-
-// Function to render total price
-// const renderTotalPrice = () => {
-//   const totalPriceElement = document.querySelector('.total-price');
-//   const totalPrice = shoppingCartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-//   totalPriceElement.textContent = `Total: IDR ${totalPrice}`;
-// };
 
 // Event listener for removing from cart
 document.querySelectorAll('.remove-item').forEach(removeButton => {

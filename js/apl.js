@@ -2,10 +2,12 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Data produk
   const products = [
-      { id: 1, name: 'Headphone', img: './../img/products/headphone.jpg', price: 20000 },
+      { id: 1, name: 'Headphone', img: './../img/products/headphone.jpg', price: 150000 },
       { id: 2, name: 'Earphone', img: './../img/products/earphone.jpg', price: 20000 },
       { id: 3, name: 'Casing', img: './../img/products/casing.jpeg', price: 20000 },
       { id: 4, name: 'Usb', img: './../img/products/usb.jpg', price: 20000 },
+      { id: 5, name: 'Speaker Lamp', img: './../img/products/speaker-lamp.jpg', price: 20000 },
+      { id: 5, name: 'Speaker Lamp', img: './../img/products/speaker-lamp.jpg', price: 20000 },
       { id: 5, name: 'Speaker Lamp', img: './../img/products/speaker-lamp.jpg', price: 20000 },
   ];
 
